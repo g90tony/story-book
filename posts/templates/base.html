@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Story Book Prototype</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body id="body " onload="viewport_tracker()">
+    <div id="main-container">
+      <div class="sidebar-header">
+        <img src="images/logo.png" alt="logo" class="logo" />
+        <button class="btn" id="menu-drawer" onclick="sidebar_toggle()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div id="sidebar">
+        <div class="user-info-container">
+          <img src="images/avatar.png" alt="avatar" class="user-avatar" />
+          <div class="user-text-container">
+            <div class="text-row">
+              <p class="user-names">John Doe</p>
+            </div>
+            <div class="text-row">
+              <p class="user-joined">Joined 2020</p>
+            </div>
+          </div>
+        </div>
+        <div class="user-bio-container">
+          <p class="sidebar-label">Bio:</p>
+          <p class="user-bio-text">Insert bio here</p>
+        </div>
+        <div class="upload-button-container">
+          <button class="upload-button">Upload New Photo</button>
+        </div>
+        <div class="recent-posts">
+          <p class="sidebar-label">Recent Uploads</p>
+          <div class="recent-posts-grid">
+            <img src="images/post1.jpg" alt="post1" class="recent-post" />
+            <img src="images/post2.jpg" alt="post1" class="recent-post" />
+            <img src="images/post3.jpg" alt="post1" class="recent-post" />
+            <img src="images/post4.jpg" alt="post1" class="recent-post" />
+            <img src="images/post5.jpg" alt="post1" class="recent-post" />
+            <img src="images/post6.jpg" alt="post1" class="recent-post" />
+          </div>
+        </div>
+        <a href="/log-out" class="log-out"
+          ><i class="fas fa-door-open"></i> Log out</a
+        >
+      </div>
+      <div class="search-bar-container">
+        <div class="search-bar-form">
+          <form action="" class="search-form">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control search-form-input"
+                placeholder="Search..."
+                aria-label="Search..."
+                aria-describedby="button-addon2"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn search-form-button"
+                  type="button"
+                  id="button-addon2"
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="content">
+        <div class="card photo-post-item">
+          <button
+            type="button"
+            class="btn"
+            data-toggle="modal"
+            data-target="#postViewer"
+          >
+            <img
+              class="card-img-top photo-post-img"
+              src="https://images.pexels.com/photos/1834403/pexels-photo-1834403.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt=""
+            />
+          </button>
+          <div class="card-body photo-post-body-container">
+            <div class="Photo-text-container">
+              <h4 class="card-title photo-post-title">Drone Photography</h4>
+              <p class="card-text photo-post-date">24 February 2021</p>
+            </div>
+            <div class="photo-like-container">
+              <button class="btn"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="javascript/sidebar.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/a872bbb5df.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
