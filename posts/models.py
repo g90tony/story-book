@@ -19,6 +19,7 @@ class Photo(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE,)
     category = models.ManyToManyField(Category)
     date = models.DateTimeField(auto_now=True)
+    img_url = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return self.title
