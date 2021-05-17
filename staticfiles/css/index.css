@@ -1,0 +1,429 @@
+@font-face {
+  font-family: "Century Gothic";
+  src: url("../fonts/Century\ Gothic.ttf");
+}
+@font-face {
+  font-family: "Century Gothic Bold";
+  src: url("../fonts/Century\ Gothic\ Bold.ttf");
+}
+
+body {
+  background-color: #f7fff7;
+  font-family: "Century Gothic";
+  margin: 0;
+}
+
+#main-container {
+  display: grid;
+  grid-template-columns: 0.3fr 0.75fr 0.5fr;
+  grid-template-rows: 0.2fr 0.75fr 0.75fr;
+  grid-template-areas:
+    "header search search"
+    "sidebar content content"
+    "sidebar content content";
+  width: 100%;
+  height: 100vh;
+}
+
+.sidebar-header {
+  grid-area: header;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+  z-index: 4;
+  background-color: #292f36;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: #292f36;
+  color: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px;
+  z-index: 4;
+}
+
+.logo {
+  width: 50%;
+  padding: 0 10px;
+  object-fit: contain;
+}
+
+#menu-drawer {
+  font-size: 30px !important;
+  padding: 5px;
+  color: #ffffff;
+  display: none;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0;
+  height: min-content;
+}
+
+.user-avatar {
+  width: 40%;
+  margin: 0 20px;
+}
+
+.user-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: min-content;
+}
+
+.text-row {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 0;
+  height: min-content;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.user-names {
+  font-family: "Century Gothic Bold";
+  font-size: 18px;
+  font-weight: 800;
+  color: #4ecdc4;
+  margin-bottom: 0;
+}
+
+.user-joined {
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.sidebar-label {
+  font-size: 18px;
+  font-family: "Century Gothic Bold";
+  color: #4ecdc4;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.user-bio-text {
+  padding: 10px;
+  font-size: 14px;
+  height: 45px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.upload-button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.upload-button {
+  background-color: #4ecdc4;
+  border: #4ecdc4 solid 1px;
+  color: #ffffff;
+  padding: 10px;
+  font-family: "Century Gothic Bold";
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.upload-button:hover {
+  background-color: #ffffff;
+  color: #4ecdc4;
+  transition: 400ms ease-in-out;
+}
+
+.recent-posts-label {
+  font-size: 24px;
+  font-family: "Century Gothic Bold";
+  color: #4ecdc4;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.recent-posts-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.recent-post {
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  border: #292f36 solid 1px;
+  margin: 10px 7px;
+}
+
+.log-out {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Century Gothic Bold";
+  margin-top: 20px;
+  margin: auto 0;
+  font-size: 14px;
+  height: max-content;
+}
+
+.log-out i {
+  font-size: 24px;
+  color: #4ecdc4;
+}
+
+.search-bar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  grid-area: search;
+  background-color: #292f36;
+}
+
+.search-bar-form {
+  padding: 0 20px;
+  width: 300px;
+  margin: auto 0;
+}
+
+.search-form-input {
+  border-radius: 5px;
+  width: 250px;
+  padding: 10px !important;
+  font-size: 14px !important;
+  color: #4ecdc4;
+  height: 40px !important;
+}
+
+.search-form-button {
+  background-color: #ffffff !important;
+  color: #292f36;
+  padding: 10px !important;
+  font-size: 14px !important;
+  height: 40px !important;
+}
+
+#content {
+  grid-area: content;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.photo-post-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 250px;
+  border: 1px solid #4ecdc4 !important;
+  height: min-content;
+  margin: 10px 10px;
+}
+
+.photo-post-img {
+  padding: 10px;
+  border-radius: 10px !important;
+  margin: 0 !important;
+}
+
+.photo-post-body-container {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-top: 0 !important;
+}
+
+.photo-text-container {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 75% !important;
+  height: fit-content !important;
+  margin-top: 0 !important;
+}
+
+.photo-post-title {
+  font-family: "Century Gothic Bold";
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.photo-post-date {
+  font-family: "Century Gothic Bold";
+  font-size: 14px;
+  color: #4ecdc4;
+  margin-top: 0;
+}
+
+.modal-title {
+  color: #4ecdc4 !important;
+  font-size: 28px !important;
+  font-family: "Century Gothic Bold";
+}
+.modal {
+  width: 90vw !important;
+}
+
+.close span {
+  color: #4ecdc4 !important;
+  border: solid #4ecdc4 1px !important;
+}
+
+.modal-content {
+  width: 80vw !important;
+  height: 60vh !important;
+}
+
+.modal-header {
+  background-color: #292f36 !important;
+  color: #4ecdc4 !important;
+}
+
+.photo-post-modal {
+  background-color: #292f36;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.photo-post-img-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.photo-post-text-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.photo-post-desc {
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.photo-post-location {
+  font-weight: 14px;
+  color: #ffffff;
+  font-family: "Century Gothic Bold";
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.search-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.search-header-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.search-header-text {
+  font-size: 24px;
+  font-family: "Century Gothic Bold";
+  margin-bottom: 0;
+}
+
+.search-results-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.search-sub-header-text {
+  margin-top: 0;
+  font: 18px;
+  font-family: "Century Gothic Bold";
+  color: #4ecdc4;
+}
+
+@media screen and (max-width: 767px) {
+  #menu-drawer {
+    display: flex;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 0.3fr 0.75fr 0.75fr;
+    grid-template-areas:
+      "header"
+      "search"
+      "content"
+      "content";
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #sidebar {
+    display: none;
+    width: 100vw;
+    height: max-content;
+    z-index: 4;
+    position: absolute;
+    left: 0;
+    top: 80px;
+  }
+
+  #content {
+    padding: 30px;
+  }
+
+  .search-bar-container {
+    height: 70px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .photo-post-modal {
+    flex-flow: column;
+  }
+  .photo-post-img-container {
+    width: 100%;
+  }
+  .photo-post-text-container {
+    width: 100%;
+  }
+}
