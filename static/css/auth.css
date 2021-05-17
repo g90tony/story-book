@@ -35,7 +35,7 @@
 }
 
 .login-sub-header {
-  font-size: 18px !important;
+  font-size: 16px !important;
   font-family: "Century Gothic Bold";
   color: #292f36;
   margin-bottom: 0;
@@ -49,7 +49,7 @@
 .login-header {
   color: #ffffff;
   font-family: "Century Gothic Bold";
-  font-size: 28px;
+  font-size: 24px;
   margin-top: 10px;
   margin-bottom: 10px !important;
 }
