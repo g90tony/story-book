@@ -1,10 +1,10 @@
 @font-face {
   font-family: "Century Gothic";
-  src: url("Century\ Gothic.ttf");
+  src: url("../fonts/Century\ Gothic.ttf");
 }
 @font-face {
   font-family: "Century Gothic Bold";
-  src: url("Century\ Gothic\ Bold.ttf");
+  src: url("../fonts/Century\ Gothic\ Bold.ttf");
 }
 
 body {
