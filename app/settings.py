@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
 import django_heroku
 import dj_database_url
 import os
@@ -153,10 +154,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals()) 
 
 # Cloudinary Storage Configurations
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('CLOUDINARY_COULD_NAME'),
-    'API_KEY': config('CLOUDINARY_API_KEY'),
-    'API_SECRET': config('CLOUDINARY_SECRET_KEY'),
-}
+cloudinary.config( 
+    cloud_name= config('CLOUDINARY_COULD_NAME'),
+    api_key = config('CLOUDINARY_API_KEY'),
+    api_secret = config('CLOUDINARY_SECRET_KEY'),
+)
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
