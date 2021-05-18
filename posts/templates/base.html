@@ -28,7 +28,9 @@
       </div>
       <div id="sidebar">
         <div class="user-info-container">
-          <img src="{% static 'images/logo.png' %}" alt="logo" class="logo" />
+          <a href="{% url 'posts:Home' %}">
+            <img src="{% static 'images/logo.png' %}" alt="logo" class="logo" />
+          </a>
         </div>
         <div class="user-bio-container">
           <p class="sidebar-label">About:</p>
@@ -46,18 +48,6 @@
         </div>
         <div class="upload-button-container">
           <button class="upload-button">Filter</button>
-        </div>
-        <div class="recent-posts">
-          <p class="sidebar-label">Recent Uploads</p>
-          <div class="recent-posts-grid">
-            {% if recent %} {% for post in recent %}
-            <img src="post.img_url" alt="post.title" class="recent-post" />
-            {% endfor %} {% else %}
-            <p class="w-100 user-bio-text text-center">
-              There are no uploaded posts
-            </p>
-            {% endif %}
-          </div>
         </div>
       </div>
       <div class="search-bar-container">
