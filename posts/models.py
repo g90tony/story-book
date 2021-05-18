@@ -24,7 +24,7 @@ class Photo(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE,)
     category = models.ManyToManyField(Category)
     date = models.DateTimeField(auto_now=True)
-    img_url = CloudinaryField('image')
+    img_url = CloudinaryField('image', default=None)
     sharable_link = models.CharField(max_length=255, unique=True, default=sharable_link)
 
     def __str__(self):
