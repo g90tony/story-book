@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+<!-- start of content block -->
+{% block content %}
+<div class="search-header-container">
+  <div class="search-header">
+    <p class="search-header-text">Search Results for "Drone Shoots":</p>
+  </div>
+<!-- start of if block -->
+{% if results %}
+
+  <div class="search-header ">
+    <p class="search-sub-header-text">{{results | length}} Images Found:</p>
+  </div>
+</div>
+<div class="search-results-container">
+  {% for post in results %}
+
+  <div class="card photo-post-item">
+    <button
+      type="button"
+      class="btn"
+      data-toggle="modal"
+      data-target="#{{post.id}}"
+    >
+      <img class="card-img-top photo-post-img" src="{{post.img_url}}" alt="" />
+    </button>
+    <div class="card-body photo-post-body-container">
+      <div class="Photo-text-container">
+        <h4 class="card-title photo-post-title">{{post.title}}</h4>
+        <p class="card-text photo-post-date">{{post.date}}</p>
+      </div>
+      <div class="photo-like-container">
+        <button class="btn"></button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="{{post.id}}"
+    tabindex="-1"
+    aria-labelledby="{{post.id}}Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="{{post.id}}Label">{{post.title}}</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body photo-post-modal">
+          <div class="photo-post-img-container">
+            <img src="{{post.img_url}}" alt="" class="photo-post-view w-100" />
+          </div>
+          <div class="photo-post-text-container">
+            <p class="photo-post-location">{{post.img_url}}</p>
+            <p class="photo-post-date">{{post.date}}</p>
+            <p class="photo-post-desc">{{post.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% else %}
+
+
+  <div class="search-header w-100">
+    <p class="search-sub-header-text mt-3 mx-auto text-center">No Images Found</p>
+  </div>
+</div>
+<div class="search-results-container"></div>
+{% endif %} {% endblock content %}
