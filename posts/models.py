@@ -2,6 +2,7 @@ from django.db import models
 from cloudinary import CloudinaryImage
 import random 
 import string 
+from decouple import config
 
 # Create your models here.
 class Location(models.Model):
@@ -31,7 +32,10 @@ class Photo(models.Model):
         if existing_link:
             self.generate_shareable_link()
         else:
-            return generated_link
+            if config("MODE") == 'dev':
+                return f'http://127.0.0.1/photo/{generated_link}'
+            else:
+                return f'http://https://project-storybook.herokuapp.com/photo/{generated_link}'
     
     sharable_link = generate_shareable_link()
     
