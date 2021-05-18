@@ -7,10 +7,8 @@ def index(request):
     
     return render(request, 'home.html', {"title":title ,"posts": allPosts})
 
-def search_title(request, search_query):
-    
+def search_categories(request, search_query):
     title = f'Search: {search_query} Results'
-    
     Photo.objects.filter(category = search_query)
     
     return render(request, 'search.html', {"title": title})
