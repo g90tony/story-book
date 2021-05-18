@@ -1,4 +1,6 @@
+import cloudinary
 from django.db import models
+from cloudinary import CloudinaryImage
 
 # Create your models here.
 class Location(models.Model):
@@ -19,7 +21,7 @@ class Photo(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE,)
     category = models.ManyToManyField(Category)
     date = models.DateTimeField(auto_now=True)
-    img_url = models.CharField(max_length=255, blank=True)
+    img_url = CloudinaryImage(max_length=255, blank=True)
 
     def __str__(self):
         return self.title
