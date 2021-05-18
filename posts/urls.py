@@ -7,6 +7,5 @@ from . import views
 app_name = 'posts'
 
 urlpatterns = [
-    path('', views.login, name='Sign In'),
-    re_path('^register$', views.register, name='Sign Up')
+    path('', views.index, name='Home'),
 ]
