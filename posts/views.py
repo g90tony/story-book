@@ -14,3 +14,9 @@ def search_title(request, search_query):
     Photo.objects.filter(category = search_query)
     
     return render(request, 'search.html', {"title": title})
+
+def filter_by_location(request, location_query):
+    title=f'Posts from {location_query}'
+    filtered_posts = Photo.objects.filter(location = location_query)
+    
+    return render(request, 'home.html', {"title": title, "posts": filtered_posts})
