@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts.apps.PostsConfig',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals()) 
+
+# Cloudinary Storage Configurations
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': config('CLOUDINARY_COULD_NAME'),
+    'API_KEY': config('CLOUDINARY_API_KEY'),
+    'API_SECRET': config('CLOUDINARY_SECRET_KEY'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
