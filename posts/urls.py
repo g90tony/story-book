@@ -8,5 +8,6 @@ app_name = 'posts'
 
 urlpatterns = [
     path('', views.index, name='Home'),
-    re_path('^search/<search_query>$', views.search_title, name='Search'),
+    re_path('^search/<search_query>$', views.search_categories, name='Search'),
+    re_path('^filer/<location_filter>$', views.search_categories, name='Filter Location'),
 ]
