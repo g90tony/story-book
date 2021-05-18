@@ -12,9 +12,13 @@
     type="button"
     class="btn"
     data-toggle="modal"
-    data-target="#{{post.id}}"
+    data-target="#post{{post.id}}"
   >
-    <img class="card-img-top photo-post-img" src="{{post.img_url}}" alt="" />
+    <img
+      class="card-img-top photo-post-img"
+      src="{{post.img_url.url}}"
+      alt=""
+    />
   </button>
   <div class="card-body photo-post-body-container">
     <div class="Photo-text-container">
@@ -29,7 +33,7 @@
 
 <div
   class="modal fade"
-  id="{{post.id}}"
+  id="post{{post.id}}"
   tabindex="-1"
   aria-labelledby="{{post.id}}Label"
   aria-hidden="true"
@@ -37,7 +41,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="{{post.id}}Label">{{post.title}}</h5>
+        <h5 class="modal-title" id="post{{post.id}}Label">{{post.title}}</h5>
         <button
           type="button"
           class="close"
@@ -49,10 +53,15 @@
       </div>
       <div class="modal-body photo-post-modal">
         <div class="photo-post-img-container">
-          <img src="{{post.img_url}}" alt="" class="photo-post-view w-100" />
+          <img
+            src="{{post.img_url.url}}"
+            alt=""
+            class="photo-post-view w-100"
+          />
         </div>
         <div class="photo-post-text-container">
-          <p class="photo-post-location">{{post.img_url}}</p>
+          <p class="photo-post-location">{{post.title}}</p>
+          <p class="photo-post-date mb-0">{{post.location.name}}</p>
           <p class="photo-post-date">{{post.date}}</p>
           <p class="photo-post-desc">{{post.description}}</p>
         </div>
